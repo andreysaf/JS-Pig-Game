@@ -47,7 +47,6 @@ function init () {
     //Set a random gradient helping users to indicate a start of new game
     var colourIndex = Math.floor(Math.random() * backgroundColours.length);
     document.body.style.background = backgroundColours[colourIndex];
-    console.log(backgroundColours[colourIndex]);
 }
 
 //Next player function
@@ -91,8 +90,19 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         scores[activePlayer] += roundScore;
         document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
 
+        var input = document.querySelector('.final-score').value;
+        var winningScore;    
+
+        if(input) {
+            winningScore = input;
+        } else {
+            winningScore = 20;
+        }
+
+        console.log(winningScore);
+
         //Check if player won the game
-        if (scores[activePlayer] >= 20) {
+        if (scores[activePlayer] >= winningScore) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
