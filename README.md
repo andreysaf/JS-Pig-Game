@@ -12,3 +12,7 @@ Download or clone repository and run:
 ```
 index.html
 ```
+
+### Rules of the game
+
+Two players take turn to roll the dice. Points accumulate in the turn's score and player can hold points to transfer them to their global score anytime. If a player chooses to hold points, it becomes other player's turn. If a player rolls a one, the points accumulated in turn's score are lost and it is turn of another player.
